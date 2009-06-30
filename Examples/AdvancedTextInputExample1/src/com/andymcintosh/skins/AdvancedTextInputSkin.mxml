@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin 
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	>
+
+	<!-- 
+	////////////////////////////////////////////////////////////////////////////
+	//
+	//	Metadata
+	//
+	////////////////////////////////////////////////////////////////////////////
+	-->
+	
+	<fx:Metadata>
+	<![CDATA[
+	 
+		[HostComponent("com.andymcintosh.components.AdvancedTextInput")]
+	
+	]]>
+	</fx:Metadata>
+    
+    <!-- 
+	////////////////////////////////////////////////////////////////////////////
+	//
+	//	States
+	//
+	////////////////////////////////////////////////////////////////////////////
+	-->
+
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="disabled" />
+		<s:State name="focused" />
+	</s:states>
+	
+	<!-- 
+	////////////////////////////////////////////////////////////////////////////
+	//
+	//	Graphics
+	//
+	////////////////////////////////////////////////////////////////////////////
+	-->
+
+	<!-- border -->
+	<s:Rect 
+		bottom="0"
+		left="0"
+		right="0"
+		top="0"
+		>
+		<s:stroke>
+			<s:LinearGradientStroke 
+				rotation="90"
+				weight="1"
+				>
+				<s:GradientEntry 
+					color="0x000000"
+					alpha="0.5525"
+					/>
+				<s:GradientEntry 
+					color="0x000000"
+					alpha="0.6375"
+					/>
+			</s:LinearGradientStroke>
+		</s:stroke>
+	</s:Rect>
+
+	<!-- fill -->
+	<s:Rect 
+		id="background"
+		bottom="1"
+		left="1"
+		right="1"
+		top="1"
+		>
+		<s:fill>
+			<!--- Defines the background fill color. -->
+			<s:SolidColor 
+				id="bgFill"
+				color="0xFFFFFF"
+				/>
+		</s:fill>
+	</s:Rect>
+
+	<!-- shadow -->
+	<s:Rect 
+		height="1"
+		left="1"
+		right="1"
+		top="1"
+		>
+		<s:fill>
+			<s:SolidColor 
+				color="0x000000"
+				alpha="0.12"
+				/>
+		</s:fill>
+	</s:Rect>
+	
+	<!-- 
+	////////////////////////////////////////////////////////////////////////////
+	//
+	//	Components
+	//
+	////////////////////////////////////////////////////////////////////////////
+	-->
+
+	<!-- text -->
+	<s:RichEditableText 
+		id="textView"
+		bottom="1"
+		left="1"
+		paddingBottom="3"
+		paddingLeft="3"
+		paddingRight="3"
+		paddingTop="5"
+		right="1"
+		top="1"
+		lineBreak="explicit"
+		/>
+
+	<!-- prompt -->
+	<s:SimpleText 
+		id="promptView"
+		bottom="1"
+		left="1"
+		paddingBottom="3"
+		paddingLeft="3"
+		paddingRight="3"
+		paddingTop="5"
+		right="1"
+		top="1"
+		lineBreak="explicit"
+		color="#999999"
+		fontStyle="italic"
+		text="{hostComponent.prompt}"
+		visible="{currentState != 'focused' &amp;&amp; hostComponent.text == ''}"
+		/>
+
+</s:SparkSkin>

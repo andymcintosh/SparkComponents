@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application 
+	minHeight="768"
+	minWidth="1024"
+	xmlns:controls="com.andymcintosh.components.*"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:mx="library://ns.adobe.com/flex/halo"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	 viewSourceURL="srcview/index.html">
+	<fx:Script>
+		<![CDATA[
+			import com.andymcintosh.skins.AdvancedTextInputSkin;
+
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				firstNameInput.text = "";
+				lastNameInput.text = "";
+			}
+
+		]]>
+	</fx:Script>
+
+	<s:layout>
+		<s:VerticalLayout 
+			horizontalAlign="center"
+			paddingTop="10"
+			/>
+	</s:layout>
+
+
+	<controls:AdvancedTextInput
+		id="firstNameInput"
+		prompt="First Name"
+		skinClass="com.andymcintosh.skins.AdvancedTextInputSkin"
+		/>
+		
+	<controls:AdvancedTextInput
+		id="lastNameInput"
+		prompt="Last Name"
+		skinClass="com.andymcintosh.skins.AdvancedTextInputSkin"
+		/>
+		
+	<s:Button
+		label="Submit"
+		/>
+		
+	<s:Button
+		label="Clear"
+		click="button1_clickHandler(event)"
+		/>
+		
+
+</s:Application>
